@@ -1,6 +1,7 @@
 const path = require("path"); // coloca o endereço conforme o sistema operacional
 
 module.exports = {
+  mode: "development",
   entry: path.resolve(__dirname, "src", "index.jsx"), // fala qual é o arquivo principal da minha aplicação
   // qual arquivo eu vou gerar com o webpack
   output: {
