@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
+  devtool: "eval-source-map", // para debugar melhor os erros do codigo
   entry: path.resolve(__dirname, "src", "index.jsx"), // fala qual é o arquivo principal da minha aplicação
   // qual arquivo eu vou gerar com o webpack
   output: {
