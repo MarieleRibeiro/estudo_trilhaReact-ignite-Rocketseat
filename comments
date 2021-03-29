@@ -1,10 +1,14 @@
 ** yarn init -y => criar meu package,json
+
 ** yarn add react => criar meu programa react (node_modules, yarn.lock...)
+
 ** yarn add react-dom => minha arvore de elementos
+
 ** yarn add @babel/core @babel/cli @babel/preset-env -D => biblioteca para converter meu codigo para que todos os outros navegadores consigam entender
  === @babel/cli => para eu conseguir executar o babel na minha linha de comando
  === @babel/preset-env => extensão do babel para identificar qual ambiente a aplicação esta sendo executada para converter o codigo na melhor maneira possivel
  === @babel/preset-react => entender o codigo em react
+ 
  ** yarn add webpack webpack-cli webpack-dev-server -D => converte alguns arquivos de forma que possam ser entendidos pelo browser
  === .js -> .hbs -> .sass -> .png ->(entre outros) => converte => .js .css .jpg .png que são entendidos pelo browser.
  
@@ -15,3 +19,6 @@
  ** yarn add style-loader css-loader -D -> São utilizados em conjunto para enterder os arquivos css.
 
  -> Utilizar o css com um pré-processador-> o mais conhecido do css é o SASS => com ele connsegue ter mais funcionalidades ==> yarn add sass-loader -D/ yarn add node-sass -D
+
+ ** yarn add -D @pmmmwh/react-refresh-webpack-plugin react-refresh -->alterar o codigo da aplicação e salva esse codigo e ter esse codigo repletido no navegador 
+  porem mantendo o estado dos componentes

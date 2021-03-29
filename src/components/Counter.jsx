@@ -16,3 +16,10 @@ export function Counter() {
     </div>
   )
 }
+
+// IMUTABILIDADE
+ 
+// usuarios = ['Mariele', 'Miguel', 'Millena'] 
+// usuarios.push('Misael')
+
+// novoUsuario = [...usuarios, 'Misael'] não muda o [] só acrescenta um novo usuario

@@ -1,8 +1,9 @@
 const path = require("path"); // coloca o endereço conforme o sistema operacional
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const loader = require("sass-loader");
 
 //Configurar um ambiente de desenvolvimento e um de produção -> para o Webpack funcionar de formas diferentes quando esta em desenvolvimento e quando for rodar online, estiver em produção.
-
 const isDelopment = process.env.NODE_ENV !== "production";
 
 module.exports = {
@@ -19,18 +20,27 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "public", "index.html"), //yarn webpack server=> observar as mudanças feitas na aplicação
+    hot: true,
   },
   plugins: [
+    isDelopment && new ReactRefreshWebpackPlugin(), // executar somente em desenvolvimento
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
     }),
-  ],
+  ].filter(Boolean), //
   module: {
     rules: [
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        use: "babel-loader", // é a integração entre o babel e o webpack
+        use: {
+          loader: "babel-loader", // é a integração entre o babel e o webpack
+          options: {
+            plugins: [
+              isDelopment && require.resolve("react-refresh/babel"),
+            ].filter(Boolean),
+          },
+        },
       },
       {
         test: /\.scss$/,
