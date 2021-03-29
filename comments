@@ -11,3 +11,7 @@
  => get.ElementbyId() -> função do javascript para procurar um elemento em tela atraves do ID  
 
  ** yarn add cross-env -D -> serve para definir variaveis ambiente independente do sistema operacional(windowns, linux, mac)
+
+ ** yarn add style-loader css-loader -D -> São utilizados em conjunto para enterder os arquivos css.
+
+ -> Utilizar o css com um pré-processador-> o mais conhecido do css é o SASS => com ele connsegue ter mais funcionalidades ==> yarn add sass-loader -D/ yarn add node-sass -D
