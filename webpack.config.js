@@ -1,9 +1,13 @@
 const path = require("path"); // coloca o endereço conforme o sistema operacional
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+//Configurar um ambiente de desenvolvimento e um de produção -> para o Webpack funcionar de formas diferentes quando esta em desenvolvimento e quando for rodar online, estiver em produção.
+
+const isDelopment = process.env.NODE_ENV !== "production";
+
 module.exports = {
-  mode: "development",
-  devtool: "eval-source-map", // para debugar melhor os erros do codigo
+  mode: isDelopment ? "development" : "production",
+  devtool: isDelopment ? "eval-source-map" : "source-map", // para debugar melhor os erros do codigo
   entry: path.resolve(__dirname, "src", "index.jsx"), // fala qual é o arquivo principal da minha aplicação
   // qual arquivo eu vou gerar com o webpack
   output: {

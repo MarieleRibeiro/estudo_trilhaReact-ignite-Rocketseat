@@ -9,3 +9,5 @@
  === .js -> .hbs -> .sass -> .png ->(entre outros) => converte => .js .css .jpg .png que são entendidos pelo browser.
  
  => get.ElementbyId() -> função do javascript para procurar um elemento em tela atraves do ID  
+
+ ** yarn add cross-env -D -> serve para definir variaveis ambiente independente do sistema operacional(windowns, linux, mac)
