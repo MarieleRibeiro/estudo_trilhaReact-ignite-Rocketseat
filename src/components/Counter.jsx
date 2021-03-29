@@ -1,3 +1,5 @@
+// Trabalhando com estado React 
+
 import {useState} from 'react'
 
 export function Counter() {
