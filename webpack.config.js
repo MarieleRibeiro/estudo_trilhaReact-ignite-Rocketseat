@@ -9,14 +9,14 @@ const isDelopment = process.env.NODE_ENV !== "production";
 module.exports = {
   mode: isDelopment ? "development" : "production",
   devtool: isDelopment ? "eval-source-map" : "source-map", // para debugar melhor os erros do codigo
-  entry: path.resolve(__dirname, "src", "index.jsx"), // fala qual é o arquivo principal da minha aplicação
+  entry: path.resolve(__dirname, "src", "index.tsx"), // fala qual é o arquivo principal da minha aplicação
   // qual arquivo eu vou gerar com o webpack
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   devServer: {
     contentBase: path.resolve(__dirname, "public", "index.html"), //yarn webpack server=> observar as mudanças feitas na aplicação
@@ -31,7 +31,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.(j|t)sx$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader", // é a integração entre o babel e o webpack
